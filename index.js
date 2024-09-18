@@ -6,6 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express()
+const port = process.env.PORT || 3000
 
 const compliments = [
     'You must be a magician, every time I look at you everyone else disappears.',
@@ -32,4 +33,4 @@ app.get('', (req, res) => {
     res.render('home', { compliment: randomCompliment })
 })
 
-app.listen(3000, () => console.log('Server is up and running on port 3000!'))
+app.listen(port, () => console.log('Server is up and running on port', + port + ' !'))
